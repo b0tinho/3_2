@@ -1,15 +1,38 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>NOAA Stations</title>
+  <meta charset="UTF-8" />
+  <title>Dane klimatyczne NOAA</title>
 </head>
 <body>
-    <h1><div id = "text-container">Lista stacji NOAA</div></h1>
-    <div id = "table-container">Ładowanie danych...</div>
+  <h1>Dane klimatyczne NOAA</h1>
+  
+  <form id="data-form">
+    <label>
+      Dataset ID:
+      <input type="text" name="datasetid" value="GHCND" required />
+    </label>
+    <br />
+    <label>
+      Location ID:
+      <input type="text" name="locationid" value="ZIP:28801" required />
+    </label>
+    <br />
+    <label>
+      Start Date:
+      <input type="date" name="startdate" value="2010-05-01" required />
+    </label>
+    <br />
+    <label>
+      End Date:
+      <input type="date" name="enddate" value="2010-05-01" required />
+    </label>
+    <br />
+    <button type="submit">Pobierz dane</button>
+  </form>
 
+  <div id="result">Wyniki pojawią się tutaj</div>
 
-    <script src = "script_dataset.js"></script>
+  <script src="script_data.js"></script>
 </body>
 </html>
